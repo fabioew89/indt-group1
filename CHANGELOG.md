@@ -1,3 +1,9 @@
+## 0.4.1 (2025-11-26)
+
+### Fix
+
+- del _site/ it's not necessary
+
 ## 0.4.0 (2025-11-26)
 
 ### Feat
