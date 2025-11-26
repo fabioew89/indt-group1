@@ -1,3 +1,10 @@
+## 0.5.0 (2025-11-26)
+
+### Feat
+
+- add members data in _data/
+- upt about page
+
 ## 0.4.1 (2025-11-26)
 
 ### Fix
