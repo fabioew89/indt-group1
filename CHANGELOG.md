@@ -1,47 +1,4 @@
-## 0.5.0 (2025-11-26)
-
-### Feat
-
-- add members data in _data/
-- upt about page
-
-## 0.4.1 (2025-11-26)
-
-### Fix
-
-- del _site/ it's not necessary
-
-## 0.4.0 (2025-11-26)
-
-### Feat
-
-- add pages in include folder
-- upt default.html
-- add about page
-
-### Fix
-
-- upt .gitignore
-
-## 0.3.0 (2025-11-26)
-
-### Feat
-
-- add jekyll in project
-
-## 0.2.0 (2025-11-26)
-
-### Feat
-
-- add .jekyll-metadata and Gemfile.lock in .gitignore
-
-## 0.1.1 (2025-11-26)
-
-### Fix
-
-- del trivial files
-
-## 0.1.0 (2025-11-25)
+## 0.2.0 (2025-11-21)
 
 ### Feat
 

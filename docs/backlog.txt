@@ -1,0 +1,44 @@
+├── INICIATIVA: Sistema de Rastreabilidade QR Code (MVP)
+│   ├── I. ÉPICO: Segurança e Fundamentação do Sistema
+│   │   ├── HU 1.1: Autenticação Segura
+│   │   │   ├── T 1.1.1: Criar Módulo de Autenticação (Login/Logout)
+│   │   │   ├── T 1.1.2: Configurar Segurança de Sessão (Refresh/Criptografia)
+│   │   │   └── T 1.1.3: Implementar Guards de Rota
+│   │   ├── HU 1.2: Gerenciamento de Usuários
+│   │   │   ├── T 1.2.1: Criar Modelo e Tabela de Usuários
+│   │   │   ├── T 1.2.2: Criar CRUD de Usuários (Somente Admin)
+│   │   │   └── T 1.2.3: Definir Regras de Permissão (Operador/Supervisor/Admin)
+│   │   └── HU 1.3: Gerenciamento de Setores
+│   │       ├── T 1.3.1: Criar Modelo e Tabela de Setores
+│   │       ├── T 1.3.2: Criar CRUD de Setores (Somente Admin)
+│   │       └── T 1.3.3: Vincular Setores aos Itens (Preparação FK)
+│   ├── II. ÉPICO: Gestão e Identificação do Item
+│   │   ├── HU 2.1: Cadastro de Item
+│   │   │   ├── T 2.1.1: Implementar tela de Criação de Item (Supervisor)
+│   │   │   └── T 2.1.2: Implementar tela de Edição de informações básicas
+│   │   ├── HU 2.2: Geração de QR Code
+│   │   │   ├── T 2.2.1: Implementar Geração Automática de QR (ID/Código Único)
+│   │   │   └── T 2.2.2: Permitir download/impressão do QR
+│   │   └── HU 2.3: Visualização do Item
+│   │       ├── T 2.3.1: Implementar Listagem de Itens
+│   │       └── T 2.3.2: Implementar Visualização de detalhes (Status Atual)
+│   ├── III. ÉPICO: Rastreamento e Fluxo de Produção
+│   │   ├── HU 3.1: Leitura e Redirecionamento QR
+│   │   │   ├── T 3.1.1: Criar tela de Leitura/Captura do QR Code
+│   │   │   └── T 3.1.2: Implementar redirecionamento para página do item
+│   │   ├── HU 3.2: Atualização do Item (Operador)
+│   │   │   ├── T 3.2.1: Implementar atualização de Setor, Status e Observação
+│   │   │   └── T 3.2.2: Implementar função de Registro de Defeito
+│   │   └── HU 3.3: Linha do Tempo do Histórico
+│   │       ├── T 3.3.1: Configurar registro automático no Histórico (tabela de eventos)
+│   │       └── T 3.3.2: Exibir Histórico (Setor, Ação, Operador, Data/Hora)
+│   └── IV. ÉPICO: Controle e Visibilidade Gerencial
+│       ├── HU 4.1: Dashboard de Visão Geral
+│       │   ├── T 4.1.1: Criar tela do Dashboard (Métricas principais)
+│       │   └── T 4.1.2: Exibir Últimas Atualizações
+│       ├── HU 4.2: Controle e Retrabalho (Supervisor)
+│       │   ├── T 4.2.1: Implementar função Aprovar/Reprovar item
+│       │   └── T 4.2.2: Implementar função Reabrir para Retrabalho
+│       └── HU 4.3: Exclusão e Reimpressão (Administrador)
+│           ├── T 4.3.1: Implementar função Excluir Itens (Somente Admin)
+│           └── T 4.3.2: Implementar função Gerar QR Novamente
