@@ -1,0 +1,37 @@
+<div class="min-h-[100vh] flex flex-col justify-center items-center">
+
+    <form 
+        class="max-w-100 border-3 border-gray-200 shadow-xl p-10 rounded-xl"
+        id="register-form" autocomplete="on">
+        
+        <h1 class="text-xl font-bold mb-4 text-center border-b-2 border-gray-200 pb-3 mb-3">
+            Criar Novo Usuário
+        </h1>
+
+        <div class="border-b-2 border-gray-200 pb-3 mb-3">
+            <label for="name">Nome completo</label><br />
+            <input type="text" id="name" name="name" placeholder="Ex: Maria Silva"required/>
+        </div>
+        
+        <div class="border-b-2 border-gray-200 pb-3 mb-3">
+            <label for="username">Username</label><br />
+            <input type="text" id="username" name="username" placeholder="Ex: @mariasilva" required />
+        </div>
+        
+        <div class="border-b-2 border-gray-200 pb-3 mb-3">
+            <label for="email">E-mail</label><br />
+            <input type="email" id="email" name="email" placeholder="Ex: maria@email.com" required />
+        </div>
+        
+        <button 
+            class="bg-blue-500 text-white rounded-md p-2 font-bold hover:bg-blue-400 transition-all duration-200 center w-full mb-4 hover:cursor-pointer"
+            type="submit">Cadastrar
+        </button>
+        
+        <p class="text-sm text-gray-600">
+            Já possui uma conta? 
+            <a routerLink="/login" class="text-blue-500 hover:underline">Faça o login aqui</a>.
+        </p>
+    </form>
+
+</div>
