@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Header } from '../header/header';
+import { Header } from '../../core/components/header/header';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Header],
+  imports: [Header, RouterModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

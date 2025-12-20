@@ -9,9 +9,17 @@
             <label class="text-lg mb-2 ml-1 text-gray-700">Password</label>
             <input class="outline-none border-solid border-1 border-gray-200 py-2 px-3 rounded-md" type="password" placeholder="Password">
         </div>
+
         <div class="flex justify-between gap-3">
-            <button class="bg-blue-500 w-full rounded-md p-1 text-gray-100 font-bold hover:bg-blue-400 hover:text-white transition-all duration-200">Entry</button>
-            <button class="bg-gray-200 w-full rounded-md p-1 text-gray-700 font-bold hover:bg-gray-300 hover:text-gray-900 transition-all duration-200">Register</button>
+            <button
+                class="bg-blue-500 w-full rounded-md p-1 text-gray-100 font-bold hover:bg-blue-400 hover:text-white transition-all duration-200">
+                Entry
+            </button>
+
+            <button routerLink="/create-user"
+                class="bg-gray-200 w-full rounded-md p-1 text-gray-700 font-bold hover:bg-gray-300 hover:text-gray-900 transition-all duration-200">
+                Register
+            </button>
         </div>
     </form>
 </div>
