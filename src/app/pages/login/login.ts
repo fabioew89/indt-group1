@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../shared/services/auth-service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,10 @@ import { RouterModule } from '@angular/router';
 })
 export class Login {
   formBuilder = inject(FormBuilder);
+  authService = inject(AuthService);
 
   formLogin = this.formBuilder.group({
-    login: ['', [Validators.required, Validators.minLength(6)]],
+    login: ['', [Validators.required, Validators.minLength(3)]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   })
 
@@ -25,5 +27,13 @@ export class Login {
     const isPasswordInvalid = password?.invalid && password?.touched;
 
     return !!(isLoginInvalid || isPasswordInvalid)
+  }
+
+  handleLogin() {
+    const username = this.formLogin.get('login')?.value || "";
+    const password = this.formLogin.get('password')?.value || "";
+    console.log(username, password)
+
+    this.authService.login(username, password);
   }
 }
