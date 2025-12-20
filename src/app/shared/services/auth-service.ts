@@ -46,4 +46,11 @@ export class AuthService {
 
     return false;
   }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    this.currentUser.set(null);
+    this.authenticated.set(false);
+    this.router.navigate(['login']);
+  }
 }
