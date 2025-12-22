@@ -4,7 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
 import { formValidators } from '../../shared/validators/form.validators';
 import { TrackedItems } from '../../shared/services/tracked-items';
-import { Item } from '../../core/models/Item';
+import { IItem } from '../../core/models/IItem';
 
 @Component({
   selector: 'app-create',
@@ -52,7 +52,7 @@ export class Create {
 
   createItem() {
     if (this.formCreate.valid) {
-      const newItem = this.formCreate.getRawValue() as Item;
+      const newItem = this.formCreate.getRawValue() as IItem;
 
       this.trackedItems.createItem(newItem);
 

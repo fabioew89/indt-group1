@@ -1,11 +1,11 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { Item } from '../../core/models/Item';
+import { IItem } from '../../core/models/IItem';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TrackedItems {
-  arrayDeTestes: Item[] = [
+  arrayDeTestes: IItem[] = [
     {
       id: `${crypto.randomUUID()}`,
       name: "Projetor Epson X41",
@@ -88,7 +88,7 @@ export class TrackedItems {
     }
   ]
 
-  trackedItems = signal<Item[]>(this.initializedItems());
+  trackedItems = signal<IItem[]>(this.initializedItems());
   hasTrackedItems = computed(() => this.trackedItems().length > 0);
 
   initializedItems() {
@@ -109,8 +109,8 @@ export class TrackedItems {
     return [];
   }
 
-  createItem(newItemData: Omit<Item, 'id'>): void {
-    const newitem: Item = {
+  createItem(newItemData: Omit<IItem, 'id'>): void {
+    const newitem: IItem = {
       ...newItemData,
       id: crypto.randomUUID()
     };
