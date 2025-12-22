@@ -13,5 +13,6 @@ export const routes: Routes = [
     { path: "dashboard", component: Dashboard, title: "Dashboard", canActivate: [authGuard] },
     { path: "create", component: Create, title: "Create", canActivate: [authGuard] },
     { path: "create-user", component: CreateUser, title: "Create User", canActivate: [authGuard] },
-    { path: "item", component: Item, title: "Item Info", canActivate: [authGuard] },
+    { path: "item/:id", component: Item, title: "Item Info", canActivate: [authGuard] },
+    { path: "**", redirectTo: "dashboard" }
 ];
