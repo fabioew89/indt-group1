@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { formValidators } from '../../shared/validators/form.validators';
+import { TrackedItems } from '../../shared/services/tracked-items';
+import { Item } from '../../core/models/Item';
 
 @Component({
   selector: 'app-create',
@@ -12,13 +14,16 @@ import { formValidators } from '../../shared/validators/form.validators';
 })
 export class Create {
   formBuilder = inject(FormBuilder);
+  trackedItems = inject(TrackedItems);
+  router = inject(Router);
 
-  formCreate = this.formBuilder.group({
+  // nonNullable impede valores null ao usar '.reset' e de reiniciar estados como '.touched'.
+  formCreate = this.formBuilder.nonNullable.group({
     name: ['', [Validators.required, formValidators.nameValidator()]],
     description: ['', [Validators.required, formValidators.descriptionValidator()]],
     category: ['', [Validators.required]],
     localization: ['', [Validators.required, formValidators.localizationValidator()]],
-    initialState: ['Pendente', [Validators.required]],
+    initialStatus: ['Pendente', [Validators.required]],
   })
 
   isNameInvalid() {
@@ -43,5 +48,20 @@ export class Create {
     const localization = this.formCreate.get('localization');
 
     return localization?.invalid && localization?.touched;
+  }
+
+  createItem() {
+    if (this.formCreate.valid) {
+      const newItem = this.formCreate.getRawValue() as Item;
+
+      this.trackedItems.createItem(newItem);
+
+      this.formCreate.reset();
+      this.router.navigate(['dashboard']);
+    }
+  }
+
+  deleteItem(id: string) {
+
   }
 }
