@@ -11,6 +11,7 @@
         </div>
 
         <div class="ml-auto cursor-pointer" (click)="logout()" title="Sair">
+            <span class="text-yellow-700 font-medium mr-3">Olá, {{ authService.currentUser()?.name }}</span>
             <i class="fa-solid fa-right-from-bracket text-gray-500 text-xl hover:text-red-500 transition-colors"></i>
         </div>
     </div>

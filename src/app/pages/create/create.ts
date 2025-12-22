@@ -60,8 +60,4 @@ export class Create {
       this.router.navigate(['dashboard']);
     }
   }
-
-  deleteItem(id: string) {
-
-  }
 }
