@@ -29,40 +29,48 @@
     </div>
 </header>
 
+@if (selectedItem(); as item) {
 <div class="container grid grid-cols-[1fr_30%] mx-auto gap-6 mt-8">
     <div class="flex flex-col gap-6">
         <div class="container bg-white border border-gray-300 mx-auto rounded-xl p-5">
             <div class="flex justify-between">
                 <h2 class="text-xl font-medium">Status Atual</h2>
                 <div class="bg-amber-500 flex justify-center items-center rounded-xl">
-                    <span class="px-3 py-1 text-xs font-bold text-white rounded-xl leading-tight">Item Status</span>
+                    <span class="px-3 py-1 text-xs font-bold text-white rounded-xl leading-tight">{{ item.category
+                        }}</span>
                 </div>
             </div>
             <div class="text-gray-500 font-medium my-3 text-sm">
                 <i class="bi bi-geo-alt mr-2"></i>
-                <span>Localization</span>
+                <span>{{ item.name }}</span>
             </div>
             <div class="text-gray-500 text-sm">
                 <i class="bi bi-clock mr-2"></i>
-                <span>Last update: $Data at $Hour</span>
+                <span>Última atualização: $Date at $Hour</span>
             </div>
         </div>
         <div class="container bg-white border border-gray-300 mx-auto rounded-xl p-5">
             <div class="flex flex-col">
                 <h2 class="text-xl font-medium mb-3">Descrição</h2>
-                <p class="text-gray-500 text-sm m-0">Description</p>
+                <p class="text-gray-500 text-sm m-0">{{ item.description }}</p>
             </div>
             <div class="text-gray-500 border-t border-gray-300 pt-3 mt-3 text-sm">
                 <div>
-                    <strong>Código: </strong><span>$code</span>
+                    <strong>Código: </strong><span>{{ item.id }}</span>
                 </div>
                 <div>
                     <strong>Criado em: </strong><span>$createdAt</span>
                 </div>
             </div>
         </div>
-        <div class="container bg-white border border-gray-300 mx-auto rounded-xl p-5">
-            <h2 class="text-xl font-medium mb-3">Histórico de Movimentações</h2>
+        <div>
+            <div class="flex justify-between container bg-white border border-gray-300 mx-auto rounded-xl p-5">
+                <h2 class="text-xl font-medium mb-3">Histórico de Movimentações</h2>
+                <button class="bg-blue-500 px-4 text-white font-medium text-sm rounded-lg" type="button">
+                    <i class="bi bi-plus-lg mr-2"></i>
+                    Adicionar Evento
+                </button>
+            </div>
         </div>
     </div>
     <div class="flex flex-col items-center container p-5 bg-white border border-gray-300 rounded-xl">
@@ -70,7 +78,7 @@
         <div>
             <img class="mx-auto my-14" src="https://placehold.co/160" alt="QR Code Image Example">
         </div>
-        <span class="text-gray-500 text-xs text-center">$TRACK-CODE</span>
+        <span class="text-gray-500 text-xs text-center">{{ item.id }}</span>
         <button
             class="justify-center items-center w-full p-2 rounded-xl text-sm bg-blue-500 text-white font-medium mt-4">
             <i class="bi bi-download mr-5"></i>
@@ -78,3 +86,4 @@
         </button>
     </div>
 </div>
+}
